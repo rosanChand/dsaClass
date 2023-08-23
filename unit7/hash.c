@@ -5,7 +5,7 @@
 int main() 
 { 
 	int i,j,temp, n, a[MAX], key; 
-	int h, indexpos;//for hashtablesize
+	int h, indexpos, indexpos1;//for hashtablesize
 	//int low = 0;
 
 	printf("Enter the no. of data in array:"); 
@@ -16,6 +16,8 @@ int main()
 	{ 
 	  	scanf("%d",&a[i]); 
 	}
+
+	
 	//for hashtable
 	printf("Enter the no. of data in hash table array:"); 
 	scanf("%d",&h); 
@@ -32,8 +34,13 @@ int main()
 	for (i = 0; i < n ;i++)
 	{   value = a[i];
 		createHashTable(value,0, h);
+		if (key == a[i])
+		{
+			indexpos1 = i;
+			break;  	
+		} 
 	}
-	
+	//create function
 	int createHashTable(int val, int probe, int h)
 	{
 	
@@ -52,7 +59,7 @@ int main()
 			createHashTable(val,tempprobe,h);	
 		}
 	}
-	printf("\n Hashtable is : ");
+	printf("\n Hash Array is : ");
 	for (i = 0; i< h; i++)
 	{
 		printf("%d ", hash[i]);
@@ -64,7 +71,7 @@ int main()
 	{   value = a[i];
 		createHashTable(value,0, h);
 	}
-	
+	//search function
 	int search(int key, int probe, int h)
 	{
 	
@@ -84,13 +91,18 @@ int main()
 			search(key,tempprobe2,h);	
 		}
 	}
-		int search_key = search(key, 0, h);	
-			if (key == hash[search_key])
-			{
-				indexpos = search_key;
-			}
-		
-	printf("\n\n %d is at index position %d in the hash array.", key,indexpos);
+	int search_key = search(key, 0, h);	
+	if (key == hash[search_key])
+	{
+		indexpos = search_key;
+	}
+	printf("\n\n Given Array is : ");
+	for(i=0;i<n;i++) 
+	{ 
+		printf("%d ",a[i]);
+	}	
+	printf("\n\n %d is at index position %d in the Hash array.", key,indexpos);
+	printf("\n\n %d is at index position %d in the Given array.", key,indexpos1);
 	return 0;
 }
 
