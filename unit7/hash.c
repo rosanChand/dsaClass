@@ -27,7 +27,6 @@ int main()
 	for (i = 0; i< h; i++)
 	{
 		hash[i] = -1;
-		printf("%d\n", hash[i]);
 	}
 	int value;
 	for (i = 0; i < n ;i++)
@@ -53,7 +52,7 @@ int main()
 			createHashTable(val,tempprobe,h);	
 		}
 	}
-	printf("Hashtable is : ");
+	printf("\n Hashtable is : ");
 	for (i = 0; i< h; i++)
 	{
 		printf("%d ", hash[i]);
@@ -74,7 +73,6 @@ int main()
 		temp = ((key % h + probe) % h);
 		if(hash[temp] == key)
 		{
-			printf("\n\n%d\n\n",temp);
 			return temp;
 			
 		}
@@ -86,14 +84,13 @@ int main()
 			search(key,tempprobe2,h);	
 		}
 	}
-		int search_key = search(key, 0, h);
-		printf("\n %d", search_key);	
+		int search_key = search(key, 0, h);	
 			if (key == hash[search_key])
 			{
 				indexpos = search_key;
 			}
 		
-	printf("\n %d is at index position %d in the hash array.", key,indexpos);
+	printf("\n\n %d is at index position %d in the hash array.", key,indexpos);
 	return 0;
 }
 
