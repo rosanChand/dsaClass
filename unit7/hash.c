@@ -6,7 +6,7 @@
 
 int main() 
 { 
-	int i,j,temp, n, a[MAX], key; 
+	int i,n, a[MAX], key; 
 	int h, indexpos, indexpos1;//for hashtablesize
 	//int low = 0;
 
