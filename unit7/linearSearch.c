@@ -16,7 +16,15 @@ int main()
 	printf("\n Enter the key to search: ");
 	scanf("%d", &key); 
 	indexpos = LinearSearch(a, n, key);
-	printf("%d is at index position %d in the given array.", key,indexpos);
+	if (indexpos != -1)
+	{
+			
+		printf("%d is at index position %d in the given array.", key,indexpos);
+	}
+	else
+	{
+			printf("%d is not in the given array.", key);
+	}
 	return 0;
 }
 LinearSearch(int A[],int size,int key)

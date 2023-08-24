@@ -25,7 +25,15 @@ int main()
 	printf("\n Enter the key to search: ");
 	scanf("%d", &key); 
 	indexpos = BinarySearch(a, 0, n, key);
+	if (indexpos != -1)
+	{
+	
 	printf("\n %d is at index position %d in the final sorted array.", key,indexpos);
+	}
+	else
+	{
+		printf("%d is not in the given array.",key);
+	}
 	return 0;
 }
  
@@ -55,7 +63,7 @@ BinarySearch(int A[],int low,int high,int key)
 	if(high == low)
 	{ 
 		if(key == A[low]) 
-			return (low); 
+			return low; 
 		else
 			return -1; 
 	} 
