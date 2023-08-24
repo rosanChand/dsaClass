@@ -109,8 +109,8 @@ int main()
 	}
 	else
 	{
-		printf("\n\n %d is not present in the Hash array.", key,indexpos);
-		printf("\n\n %d is at not present in the Given array.", key,indexpos1);
+		printf("\n\n %d is not present in the Hash array.", key);
+		printf("\n\n %d is not present in the Given array.", key);
 	}
 	
 	
