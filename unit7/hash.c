@@ -37,7 +37,7 @@ int main()
 		if (key == a[i])
 		{
 			indexpos1 = i;
-			break;  	
+			  	
 		} 
 	}
 	//create function
